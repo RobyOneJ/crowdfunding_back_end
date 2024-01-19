@@ -1,9 +1,10 @@
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, permissions
 from .models import CustomUser
 from .serializers import CustomUserSerializer
+from .permissions import IsSelfOrReadOnly
 
 # Create your views here.
 
@@ -21,6 +22,9 @@ class CustomUserList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class CustomUserDetail(APIView):
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly, IsSelfOrReadOnly
+    ]
     def get_object(self, pk):
         try:
             return CustomUser.objects.get(pk=pk)
@@ -30,3 +34,19 @@ class CustomUserDetail(APIView):
         user = self.get_object(pk)
         serializer = CustomUserSerializer(user)
         return Response(serializer.data)
+    
+# PUT method to update user details     
+    def put(self, request, pk):
+        user = self.get_object(pk)
+        serializer = CustomUserSerializer(
+            instance = user,
+            data = request.data,
+            partial = True
+            )
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(
+            serializer.errors,
+            status=status.HTTP_400_BAD_REQUEST
+            )
