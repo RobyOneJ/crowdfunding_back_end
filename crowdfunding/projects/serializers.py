@@ -7,7 +7,7 @@ class PledgeSerializer(serializers.ModelSerializer):
         model = Pledge        
         fields ='__all__'
 
-#17/01 added the UPDATE method as per the Permissions Next Steps
+#17/01 added the UPDATE method as per the Permissions Next Steps for the PledgeSerializer
 
     def update(self, instance, validated_data):
         instance.amount = validated_data.get('amount', instance.amount)
