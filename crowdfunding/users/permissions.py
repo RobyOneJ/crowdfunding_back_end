@@ -1,6 +1,6 @@
 from rest_framework import permissions
 
-#adding user permissions view
+#19/01 - Created permssions.py for users
 
 class IsSelfOrReadOnly(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):

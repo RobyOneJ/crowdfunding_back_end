@@ -64,6 +64,14 @@ class ProjectDetail(APIView):
             serializer.errors,
             status=status.HTTP_400_BAD_REQUEST
             )
+    
+#19/11 adding Delete Project function
+    def delete(self, request, pk, format = None):
+        project = self.get_object(pk)
+        project.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
 
     
 

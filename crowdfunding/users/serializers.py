@@ -11,7 +11,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
         return CustomUser.objects.create_user(**validated_data)
 
 
-# Update User details function
+#19/01 - Update User details function
     
     def update(self, instance, validated_data):
         instance.username = validated_data.get('username', instance.username)
