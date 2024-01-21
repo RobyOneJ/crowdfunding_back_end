@@ -2,7 +2,10 @@
 staticfiles
 
 # Byte-compiled / optimized / DLL files
+venv/*
 __pycache__/
+*.sqlite3
+*.vscode
 *.py[cod]
 *$py.class
 

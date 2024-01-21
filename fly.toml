@@ -17,7 +17,7 @@ processes = []
 [experimental]  
   auto_rollback = true
 
-[service]
+[[services]]
   http_checks = []
   internal_port = 8000
   processes = ["app"]
@@ -28,26 +28,25 @@ processes = []
     soft_limit = 20    
     type = "connections"
 
-    [[services.ports]]    
-      force_https = true    
-      handlers = ["http"]    
-      port = 80  
-    
-    [[services.ports]]    
-      handlers = ["tls", "http"]    
-      port = 443  
-
-    [[services.tcp_checks]]    
-      grace_period = "1s"    
-      interval = "15s"    
-      restart_limit = 0    
-      timeout = "2s"
+  [[services.ports]]    
+    force_https = true    
+    handlers = ["http"]    
+    port = 80  
   
-  [[statics]]  
-    guest_path = "/app/public"
-    url_prefix = "/static/"
+  [[services.ports]]    
+    handlers = ["tls", "http"]    
+    port = 443  
 
-  [mounts]  
-    source = "dbvol"  
-    destination = "/dbvol"
+  [[services.tcp_checks]]    
+    grace_period = "1s"    
+    interval = "15s"    
+    restart_limit = 0    
+    timeout = "2s"
+  
+[[statics]]  
+  guest_path = "/app/public"
+  url_prefix = "/static/"
 
+[mounts]  
+  source = "dbvol"  
+  destination = "/dbvol"
