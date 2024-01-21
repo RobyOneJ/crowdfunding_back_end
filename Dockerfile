@@ -18,7 +18,7 @@ RUN set -ex && \
 
 COPY crowdfunding/ /code/
 
-#ENV SECRET_KEY "6IWpTlYfrNl9NY2Ac4GgKpnrICNLKNMEjhGEdIJ93ywhpPUGhG"
+
 RUN python manage.py collectstatic --noinput
 RUN chmod +x /code/run.sh
 
