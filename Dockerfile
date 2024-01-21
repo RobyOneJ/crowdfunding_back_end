@@ -10,13 +10,15 @@ RUN mkdir -p /code
 WORKDIR /code
 
 COPY requirements.txt /tmp/requirements.txt
+
 RUN set -ex && \
     pip install --upgrade pip && \
     pip install -r /tmp/requirements.txt && \
     rm -rf /root/.cache/
+
 COPY crowdfunding/ /code/
 
-ENV SECRET_KEY "6IWpTlYfrNl9NY2Ac4GgKpnrICNLKNMEjhGEdIJ93ywhpPUGhG"
+#ENV SECRET_KEY "6IWpTlYfrNl9NY2Ac4GgKpnrICNLKNMEjhGEdIJ93ywhpPUGhG"
 RUN python manage.py collectstatic --noinput
 RUN chmod +x /code/run.sh
 
