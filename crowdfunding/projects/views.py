@@ -65,7 +65,7 @@ class ProjectDetail(APIView):
             status=status.HTTP_400_BAD_REQUEST
             )
     
-#19/11 adding Delete Project function
+#19/01 adding Delete Project function
     def delete(self, request, pk, format = None):
         project = self.get_object(pk)
         project.delete()
