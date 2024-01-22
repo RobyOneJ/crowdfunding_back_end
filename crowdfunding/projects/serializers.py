@@ -12,7 +12,7 @@ class PledgeSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         instance.amount = validated_data.get('amount', instance.amount)
         instance.comment = validated_data.get('comment', instance.comment)
-        instance.anonymous = validated_data.get('anonymous', instance.anonymous)
+        instance.is_anonymous = validated_data.get('is_anonymous', instance.is_anonymous)
         instance.save()
         return instance
 
