@@ -110,7 +110,7 @@ This crowdfunding project must:
     * See also the screenshots in the'Images' folder in my Repo: [GitHub Crowdfunding Repo](https://github.com/RobyOneJ/crowdfunding_back_end).
 
 * [x] Your refined [API Specification](#api-specs) table and Database Schema.
-    * For the Database Schema, check the ERD.png in the 'Images' folder in my Repo: [GitHub Crowdfunding Repo](https://github.com/RobyOneJ/crowdfunding_back_end).
+    * For the Database Schema, check the 'ERD.png' screenshot in the 'Images' folder.
 
 
 

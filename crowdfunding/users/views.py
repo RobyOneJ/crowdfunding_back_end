@@ -8,7 +8,7 @@ from .permissions import IsSelfOrReadOnly
 
 # Create your views here.
 
-
+# 26/01 update permissions in the post method to avoid creation of users for a user already logged in
 class CustomUserList(APIView):
     def get(self, request):
         users = CustomUser.objects.all()
@@ -16,6 +16,8 @@ class CustomUserList(APIView):
         return Response(serializer.data)
     
     def post(self, request):
+        if request.user.is_authenticated:
+            return Response(data={"details":"You do not have permission to perform this action"}, status=status.HTTP_403_FORBIDDEN)
         serializer = CustomUserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
