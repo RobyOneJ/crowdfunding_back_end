@@ -80,8 +80,8 @@ This crowdfunding project must:
     *   [x] The supporter/user (i.e. who created the pledge)
     *   [x] Whether the pledge is anonymous or not
     *   [x] A comment to go along with the pledge
-    *   [x] Implement suitable update/delete functionality, e.g. should a project owner beallowed to update a project description?
-* [x] Implement suitable permissions, e.g. who is allowed to delete a pledge?
+    *   [x] Implement suitable update/delete functionality, e.g. should a project owner be allowed to update a project description? Yes, allowed to update project details and delete project if it is the owner.
+* [x] Implement suitable permissions, e.g. who is allowed to delete a pledge? No one but I allowed to update Pledge details.
 * [x] Return the relevant status codes for both successful and unsuccessful requeststo the API.
 * [x] Handle failed requests gracefully (e.g. you should have a custom 404 pagerather than the default error page).
 * [x] Use Token Authentication.
