@@ -21,7 +21,7 @@ This project used:
  With this concept, I hope for people/companies/politicians/schools to use my platform to create projects promoting any idea/goal, from little as buying things such as books, pens, shoes or other accessories for school up to big things, like public transport passes or means like bicycles or anything they can think of to sponsor these kids education for a more prosperous future.
 
 
-## Front End Pages/Functionality
+## Front End Pages/Functionality - COMING SOON
 - {{ A page on the front end }}    
 - {{ A list of dot-points showing functionality is available on this page }}    
     - {{ etc }}    
@@ -103,9 +103,25 @@ This crowdfunding project must:
 | **_Create New User_**    | **URL**                    | **Request Body in JSON format**                                                                                                                                                                                                                                     | **Request Body Example**                                                                                                                                                                                                                                     | **Successful Response** | **Authentication** |
 |--------------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------|--------------------|
 |                          | POST {{env_url}}/users/    | {     "is_superuser": false,     "username": "a_username",     "password": "a_password",     "first_name": "a_name",     "last_name": "a_surname",     "email": "an_email_address",     "is_staff": false,     "is_active": true,     "date_joined": "timestamp"  } | {    "is_superuser": false,    "username": "testusn",    "password": "testpwd",    "first_name": "Test",    "last_name": "User",    "email": "test@test.com",    "is_staff": false,    "is_active": true,    "date_joined": "2024-01-26T04:13:17.227000Z"  } | 201                     | N/A                |
-| **_Create New Project_** | **URL**                    | **Request Body in JSON format**                                                                                                                                                                                                                                     | **Request Body Example**                                                                                                                                                                                                                                     | **Successful Response** | **Authentication** |
-|                          | POST {{env_url}}/projects/ | {    "title": "a_title for the project",    "description": "a_description",    "goal": an_amount,    "image": "a_url_image",    "is_open": true,    "date_created": "timestamp" }                                                                                   | {     "title": "Project One",     "description": "My first project!",     "goal": 10,     "image": "https://via.placeholder.com/300.jpg",     "is_open": true,     "date_created": "2020-03-20T14:28:23.382748Z" }                                           | 201                     | Must be logged in. |
+| **_Create New Project_** | **URL**                    | **Request Body in JSON format**                                                                                                                                                                                                                                     | **Request Body Example**                                                                                                                                                                                                                                     | **Successful Response** | | **Authentication** |
+|                          | POST {{env_url}}/projects/ | {    "title": "a_title for the project",    "description": "a_description",    "goal": an_amount,    "image": "a_url_image",    "is_open": true,    "date_created": "timestamp" }                                                                                   | {     "title": "Project One",     "description": "My first project!",     "goal": 10,     "image": "https://via.placeholder.com/300.jpg",     "is_open": true,     "date_created": "2020-03-20T14:28:23.382748Z" }                                           | 201                     | Token Authentication |
 
+
+**Detailed steps for Create User:**
+1. Use the api: 'POST{{env_url}}/users/'
+2. In the JSON tab, add the 'Request Body Example' payload as shown in the above table (don't need a bearer token for this action as this is a new user signing up)
+3. Click on 'Send' button to run the api call
+Expected result: You should get a '200 OK' code and a response body with details
+Check screenshots: StepsBySteps_CreateUser.PNG in the'Images' folder in my Repo
+
+
+**Detailed steps to Create Project:**
+1. User needs to be logged in -> generate a token 
+2. Use the api: 'POST{{env_url}}/projects/'
+3. Set up the JSON tab, add the 'Request Body Example, payload as shown in the above table - requires the token generated above in the Bearer tab
+4. Click on 'Send' button to run the api call
+Expected result: You should get a '201 Created' Code and a response body that looks like the on in screenshot: StepsBySteps_CreateProject.png
+Check screenshots: StepsBySteps_CreateProject.PNG in the'Images' folder in my Repo
 
     * See also the screenshots in the'Images' folder in my Repo: [GitHub Crowdfunding Repo](https://github.com/RobyOneJ/crowdfunding_back_end).
 
