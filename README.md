@@ -13,12 +13,26 @@ This project used:
 
 
 ## Concept/Name
-**'EDUKidz'** is a platform to create projects to crowdfund initiatives to help less fortunate kids to go to school and facilitate their education. There are kids in this World willing to study and with dreams of a better future for them, their families and their countries too but, that cannot afford an education or that live in villages too far away from schools who just need the means/tools to achieve their aspirations.
+**'EDUKidz'** is a platform that empowers individuals to crowdfund initiatives for underprivileged children, enabling them to access education and pursue their dreams. These children, filled with aspirations for themselves, their families, and their communities, often face financial barriers or geographic limitations that prevent them from attending school. EDUKidz bridges this gap by providing the tools and resources they need to unlock their full potential.
 
 
 
 ## Intended Audience/User Stories
- With this concept, I hope for people/companies/politicians/schools to use my platform to create projects promoting any idea/goal, from little as buying things such as books, pens, shoes or other accessories for school up to big things, like public transport passes or means like bicycles or anything they can think of to sponsor these kids education for a more prosperous future.
+ 
+EDUKidz platform likely targets two main audiences:
+
+**1. Potential donors:**
+
+**- Individuals passionate about education and supporting underprivileged children:** This could include people who have themselves benefited from good education or who simply believe in its transformative power.
+**- Parents and families:** Parents who value education and might be looking for ways to support children in need, potentially even families who have emigrated from similar situations.
+**-Philanthropic organizations and foundations:** Groups seeking to support educational causes and empower underprivileged communities.
+
+**2. Potential beneficiaries:**
+
+**-Children in need of financial assistance for education:** This could include children from low-income families, orphans, or children living in remote areas with limited access to schools.
+**- Schools and educational institutions:** These institutions could utilize the platform to raise funds for specific needs or projects, improving their facilities or resources for students.
+
+It's important to note that EDUKidz might also target individuals who can raise awareness for the platform and its causes. This could include educators, social media influencers, or celebrities who can help spread the word and attract potential donors and beneficiaries.
 
 
 ## Front End Pages/Functionality - COMING SOON
